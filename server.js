@@ -74,7 +74,7 @@ let inquired = function() {
                 editEmployee();
                 setTimeout(() => {
                     inquired();
-                }, 20000);
+                }, 10000);
             }
             else {
                 return;
@@ -254,7 +254,7 @@ let editEmployee = async () => {
             type: 'list',
             message: 'What is the employee you would like to update?',
             choices: employeedb,
-            name: 'employee',
+            name: 'updateemployee',
         },
         {
             type: 'list',
@@ -271,8 +271,8 @@ let editEmployee = async () => {
                 newemployeejob = i+1;
             }
         }
-        for (let y=0; y<employeedb; y++) {
-            if (response.employee === employeedb[y]) {
+        for (let y=0; y<employeedb.length; y++) {
+            if (employeedb[y]===response.updateemployee) {
                 employeeid = y+1;
             }
         }
